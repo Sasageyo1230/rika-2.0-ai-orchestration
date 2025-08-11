@@ -23,7 +23,7 @@
 ### Method 1: Import to Replit
 1. Create new Replit project
 2. Choose "Import from GitHub" 
-3. Upload these files or import from repository
+3. Use URL: `https://github.com/Sasageyo1230/rika-2.0-ai-orchestration`
 4. Replit will auto-detect the Node.js environment
 
 ### Method 2: Manual Setup
