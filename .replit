@@ -1,0 +1,59 @@
+# Replit Configuration for RIKA 2.0
+run = "node server.js"
+modules = ["nodejs-20"]
+hidden = [".config", "package-lock.json"]
+
+[gitHubImport]
+requiredFiles = [".replit", "replit.nix", "package.json"]
+
+[nix]
+channel = "stable-24_05"
+
+[unitTest]
+language = "nodejs"
+
+[deployment]
+run = ["sh", "-c", "npm start"]
+deploymentTarget = "cloudrun"
+ignorePorts = false
+
+[languages.javascript]
+pattern = "**/{*.js,*.jsx,*.ts,*.tsx,*.json}"
+syntax = "javascript"
+
+[languages.javascript.languageServer]
+start = "typescript-language-server --stdio"
+
+[packager]
+language = "nodejs"
+
+[packager.features]
+packageSearch = true
+guessImports = true
+enabledForHosting = false
+
+[debugger]
+support = true
+
+[debugger.interactive]
+transport = "localhost:0"
+startCommand = ["dap-node"]
+
+[debugger.interactive.initializeMessage]
+command = "initialize"
+type = "request"
+
+[debugger.interactive.launchMessage]
+command = "launch"
+type = "request"
+program = "./server.js"
+console = "integratedTerminal"
+request = "launch"
+skipFiles = ["<node_internals>/**"]
+
+[env]
+NODE_ENV = "production"
+PORT = "3000"
+
+[docs]
+pages = ["README.md"]
